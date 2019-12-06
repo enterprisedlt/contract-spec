@@ -4,7 +4,7 @@ plugins {
     id "maven-publish"
 }
 
-group 'org.enterprisedlt.contract-spec'
+group 'org.enterprisedlt.general'
 version '1.0.0'
 
 compileScala.targetCompatibility = 1.8
@@ -63,7 +63,7 @@ bintray {
     publications = ['mavenPublication']
     publish = true
     pkg {
-        repo = 'fabric'
+        repo = 'general'
         userOrg = 'enterprisedlt'
         name = 'contract-spec'
         websiteUrl = 'https://github.com/enterprisedlt/contract-spec'
