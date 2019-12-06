@@ -1,4 +1,4 @@
-package org.enterprisedlt.general.codecs
+package org.enterprisedlt.spec
 
 /**
  * @author Alexey Polubelov
