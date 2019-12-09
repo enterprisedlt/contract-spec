@@ -30,7 +30,7 @@ object ContractResultConversions {
         case Left(e) => ErrorResult(e)
     }
 
-    implicit def Try2QueryResult[V]: Try[V] => ContractResult[String, V] = {
+    implicit def Try2Result[V]: Try[V] => ContractResult[String, V] = {
         case scala.util.Success(x) => Success(x)
         case scala.util.Failure(failure) => ExecutionError(failure.getMessage)
     }
