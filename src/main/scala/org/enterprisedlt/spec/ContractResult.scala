@@ -19,7 +19,7 @@ case class Success[E, V](payload: V) extends ContractResult[E, V]
 object ContractResultConversions {
 
     implicit def Result2Either[E, V]: ContractResult[E, V] => Either[Fail[E, V], V] = {
-        case er: Fail[E, V] => Left(er)
+        case er: ErrorResult[E, V] => Left(er)
         case ee: ExecutionError[E, V] => Left(ee)
         case Success(v) => Right(v)
     }
