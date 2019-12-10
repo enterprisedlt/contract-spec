@@ -6,15 +6,15 @@ import scala.util.Try
  * @author Alexey Polubelov
  */
 
-sealed trait ContractResult[E, V]
+sealed trait ContractResult[+E, +V]
 
-sealed trait Fail[E, V] extends ContractResult[E, V]
+sealed trait Fail[+E, +V] extends ContractResult[E, V]
 
-case class ExecutionError[E, V](msg: String) extends Fail[E, V]
+case class ExecutionError[+E, +V](msg: String) extends Fail[E, V]
 
-case class ErrorResult[E, V](payload: E) extends Fail[E, V]
+case class ErrorResult[+E, +V](payload: E) extends Fail[E, V]
 
-case class Success[E, V](payload: V) extends ContractResult[E, V]
+case class Success[+E, +V](payload: V) extends ContractResult[E, V]
 
 object ContractResultConversions {
 
